@@ -75,7 +75,7 @@ def download_from_dropbox():
         WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, 'folder-preview-modal')))
 
         # Locate the "Or continue with download only" button and click it
-        continue_download_button = driver.find_element(By.XPATH, '//button[@class="dig-Button dig-Button--transparent dig-Button--standard dig-Button--medium dig-Button-tone--neutral"]/span[text()="Or continue with download only"]/..')
+        continue_download_button = driver.find_element(By.XPATH, '//button[contains(@class, "dig-Button") and contains(@class, "dig-Button--transparent") and contains(@class, "dig-Button--standard") and contains(@class, "dig-Button--medium") and contains(@class, "dig-Button-tone--neutral")]//span[text()="Or continue with download only"]')
         continue_download_button.click()
 
         # Monitor the download directory for the downloaded file
